@@ -1,0 +1,35 @@
+Este es un espacio donde voy a poner los pasos que me han podido ayudar a crear el proyecto realizado a traves de un video
+
+1- Hemos eliminado los archivos que no queriamos
+2- Hemos creado la carpeta componentes y dentro hemos creado el componente boton como esqueleto al que le hemos pasado como prop
+texto, simplemente para identificarlo, manejarclick,porque vamos a querer que el boton dispare un evento al ser pulsado y le hemos dado una clase
+(aqui viene lo bueno de javascript , que utilizando el operador ternario te permite decidir que clase vas a tener cuando crees el boton)
+porque por ejemplo puedo querer crear dos css distintos para cada clase o el evento que lancen mis botones sea distinto en funcion de lo que necesite
+y hemos exportado el boton importante para poderlo importar en otro lado
+
+3-para ir por partes , hemos ido a App.js donde tenemos la aplicacion principal y hemos añadido los div correpondientes para separ 
+la aplicacion en cajas, le hemos aplicado un estilo css a la app principal y a los botones
+
+4hemos añadido los botones dentro de uno de los div que hemos creado 
+5-y hay que pasarle a los botones las props que le hemos definido en el esqueleto (componentes/Boton.jsx)
+6 - cuando estabamos añadiendo las props nos hemos dado cuenta de que si lo que queriamos era poder tener una pagina dinamica
+ no podiamos pasar el numero de clics nosotros , sino que tendriamos que crear un hook , en este caso Usestate que hemos importado de react
+ y hemos creado una constante de js que nos guardara el estado al realizar el evento (por eso utilizamos la funcion definida dentro del evento)
+ esta funcion que conserva el estado tiene const = [porpamodificar,funcionquelamodifica] = useState(estadoinicialdelaprop);
+
+7 dentro de las funciones evenlistener que hemos incluido hemos definido la logica que queriamos dar al estado de la prop
+  function evento ( ) => {
+ 
+    funcionquelamodifica(prop+1) //por ejemplo
+
+  }
+
+  8 ya con los botones definidos en nuestra aplicacion dentro del div correspondiente indicandole el tipo de boton que era y, habiendole dicho que hacer cuando saltara el evento
+  teniamos que crear el componente de contador
+  en el que vamos a poner los numeros
+  es decir , que va a ser un simple div al que le vamos a pasar por props numClics (recordar que es un esqueleto)
+
+  9 lo importamos en nuestro App.js 
+    al hacerlo , como lo que va a coger es el estado que esta cambiando al tocar el boton se refleja simplemente en el div que mostramos
+
+    Y HAPPY END!
