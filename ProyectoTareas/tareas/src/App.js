@@ -2,6 +2,8 @@ import './App.css';
 import logo from './imagenes/logo-tarea.png';
 import Tarea from './componentes/Tarea';
 import './hojas-de-estilo/tarea.css';
+import TareaFormulario from './componentes/TareaFormulario';
+import ListaDeTareas from './componentes/ListaDeTareas';
 
 function App() {
   return (
@@ -12,7 +14,7 @@ function App() {
       </div>
       <div className='tareas-lista-principal'>
         <h1>Mis Tareas</h1>
-            <Tarea texto='Aprender React'></Tarea>
+            <ListaDeTareas />
       </div>
     </div>
   );
