@@ -1,5 +1,4 @@
 import '../estilos/galeria.css';
-import React, {useState} from 'react';
 
 const Carga = ({ textcarga, setImagenSeleccionada }) => {
 
