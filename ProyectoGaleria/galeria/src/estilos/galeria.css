@@ -1,0 +1,67 @@
+.App{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: blueviolet;  
+}
+
+.claseGaleria{
+    width: 500px;
+    height: 400px;
+    background-color: aqua;
+    margin-top: 50px;
+    border: 6px solid black; 
+}
+
+
+.boton-carga{
+    width: 300px;
+    height: 40px;
+    background-color: rgb(0, 0, 0);
+    color: aliceblue;
+    margin-top: 10px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    border: 2px solid white;
+    
+}
+.boton-carga:hover{
+    
+    background-color: rgba(224, 220, 20, 0.809);
+    color: black;
+    border: 4px solid black;
+    
+   }
+.filtro{
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+    height: 50px;
+    background-color: rgba(241, 201, 21, 0.945);
+    margin-left: auto;
+    border: solid 3px ;
+    border-radius: 15px;
+   
+    
+}
+.boton-menu{
+    margin: 10px;
+    background-color: black;
+    color: white;
+    border-radius: 25px;
+    font-size: 20px;
+
+}
+.boton-menu:hover{
+    color: white;
+    background-color: rgb(19, 119, 207);
+}
+
+
+.file-input{
+    display: none;
+    /*para que no aparezca el input */
+}
+
