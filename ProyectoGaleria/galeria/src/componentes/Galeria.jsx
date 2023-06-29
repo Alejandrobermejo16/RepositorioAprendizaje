@@ -1,12 +1,17 @@
 import React from "react";
 import '../estilos/galeria.css';
 
-const Galeria = ({textcarga,show}) => {
+const Galeria = ({ imagenSeleccionada }) => {
 
     
     return (
         
-            <div className="claseGaleria"></div>
+            <div className="claseGaleria">
+
+                {imagenSeleccionada && <img src={imagenSeleccionada} alt="Imagen seleccionada" className="imagen-galeria" />}
+
+
+            </div>
            
         
     );

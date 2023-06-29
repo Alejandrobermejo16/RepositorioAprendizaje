@@ -65,3 +65,7 @@
     /*para que no aparezca el input */
 }
 
+.imagen-galeria{
+    max-width: 100%;
+    max-height: 100%;
+}

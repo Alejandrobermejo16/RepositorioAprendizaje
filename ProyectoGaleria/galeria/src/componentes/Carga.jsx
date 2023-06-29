@@ -1,9 +1,8 @@
 import '../estilos/galeria.css';
 import React, {useState} from 'react';
 
-const Carga = ({ textcarga }) => {
+const Carga = ({ textcarga, setImagenSeleccionada }) => {
 
-const [imagenSeleccionada,setImagenSeleccionada] = useState(null);
 
     function activarInput (){
         const inputFile = document.querySelector(".file-input"); //devuelve el primer elemento que contenga la clase css que defino abajo
@@ -30,7 +29,6 @@ const [imagenSeleccionada,setImagenSeleccionada] = useState(null);
                 <input type="file" className="file-input" onChange={handleFileChange}/>
             </button>
 
-            {imagenSeleccionada && <img src={imagenSeleccionada} alt="Imagen seleccionada" />}
             
         </div>
     );
