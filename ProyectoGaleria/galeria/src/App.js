@@ -6,7 +6,8 @@ import Galeria from './componentes/Galeria';
 
 function App() {
 
-  const [imagenSeleccionada, setImagenSeleccionada] = useState(null);
+  const [imagenSeleccionada, setImagenSeleccionada] = useState(null);      
+    //estamos creando un estado local con este hook para imagenSeleccionada
 
   return (
     <div className="App">
