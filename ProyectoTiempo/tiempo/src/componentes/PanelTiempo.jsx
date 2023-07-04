@@ -3,11 +3,11 @@ import Formulario from "./Formulario";
 
 const PanelTiempo = () => {
 
- let urlTiempo = "https://api.openweathermap.org/data/2.5/weather?appid=89d71826130674a0dd6688a9ae5b378c&lang=es";
+ let urlTiempo = "https://api.openweathermap.org/data/2.5/weather?appid=2aab49c8f019d57ea55548b20203fc4b&lang=es";
  //lleva la url de la api, nuestra apikey en appid y la lengua que hemos puesto español
  let ciudadUrl = "&q="
  //en esta segunda variable tenemos la ciudad
- let urlForecast = "https://api.openweathermap.org/data/2.5/forecast?appid=89d71826130674a0dd6688a9ae5b378c&lang=es";
+ let urlForecast = "https://api.openweathermap.org/data/2.5/forecast?appid=2aab49c8f019d57ea55548b20203fc4b&lang=es";
   //lleva las siguientes horas
 
   const [tiempo, setTiempo] = useState([]);  //Cambiar el estado del tiempo 
@@ -37,7 +37,7 @@ const PanelTiempo = () => {
 
     if(!response.ok) throw {response}  //si la respuesta NO es valida devuelve un error con la respuesta
      return response.json();   //devuelve la respuesta en formato json para ser procesada
-   }).then(({weatherData}) =>  {       //si la respuesta es valida procesamos la info en un parametro que llamamos weatherData
+   }).then((weatherData) =>  {       //si la respuesta es valida procesamos la info en un parametro que llamamos weatherData
 
     console.log(weatherData); //para verlo en consola
     setTiempo(weatherData); //metemos en el array vacio de la funcion setTiempo el parametro que llevará todos los datos 
@@ -47,17 +47,17 @@ const PanelTiempo = () => {
     console.log(error);
     setLoading(false); //hacemos que deje de cargar el spinner
     setShow(false); //lo ponemos para que si hay un error no se muestre nada(la tarjeta)
-  })
+  });
 
   //2 funcion para las horas proximas
   //lo primero es dar valor a la urlForecast que llevará consigo el dato obtenido de UrlTiempo, ciudadUrl y la localizacion
-  urlForecast = urlTiempo + ciudadUrl + loc;
+  urlForecast = urlForecast + ciudadUrl + loc;
 
   await fetch(urlForecast).then((response) =>{ //url de forecast
 
     if(!response.ok) throw{response}  //si la respuesta NO es valida devuelve un error con la respuesta
      return response.json();   //devuelve la respuesta en formato json para ser procesada
-   }).then(({ForecastData}) =>  {       //si la respuesta es valida procesamos la info en un parametro que llamamos ForecastData
+   }).then((ForecastData) =>  {       //si la respuesta es valida procesamos la info en un parametro que llamamos ForecastData
 
     console.log(ForecastData); //para verlo en consola
     setForecast(ForecastData); //metemos en el array vacio de la funcion setForecast el parametro que llevará todos los datos 
@@ -69,7 +69,7 @@ const PanelTiempo = () => {
     setLoading(false); //hacemos que deje de cargar el spinner
     setShow(false); //lo ponemos para que si hay un error no se muestre nada(la tarjeta)
 
-  })
+  });
 
 }
 

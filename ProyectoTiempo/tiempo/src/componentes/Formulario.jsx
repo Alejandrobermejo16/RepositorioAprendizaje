@@ -15,10 +15,10 @@ const Formulario = ({newLocation}) => { //propiedad que se obtiene del component
 
     return (
 
-        <div className='container'>
+        <div className="container">
 
             <form onSubmit={onSubmit}>
-                <div className='input-group mb3 mx-auto' >
+                <div className="input-group mb3 mx-auto" >
 
                 <input type="text" className="form-control" placeholder="Ciudad" onChange={(e) => setCity(e.target.value)} />
                 <button className="btn btn-primary input-group-text" type="submit">Buscar</button>
