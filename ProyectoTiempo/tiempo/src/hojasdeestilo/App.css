@@ -10,3 +10,32 @@ body{
   width: 60%;
   /*hacemos que la barra cambie el tamaño*/
 }
+
+/*estilo por defecto que indica que coja forma de tarjeta*/
+.tarjeta{
+  max-width: 60%;
+}
+
+.tarjeta-titulo{
+  position: absolute;
+  padding: 20px;
+}
+
+.tarjeta-fecha{
+  position: absolute;
+  padding-left: 20px;
+  margin-top: 60px;
+}
+
+.tarjeta-temperatura{
+  position: absolute;
+  padding-left: 20px;
+  margin-top: 260px;
+  font-size: 50px;
+}
+
+.tarjeta-descripcion{
+  position: absolute;
+  padding: 20px;
+  margin-top: 320px;
+}
