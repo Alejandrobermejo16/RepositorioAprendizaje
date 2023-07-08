@@ -1,16 +1,7 @@
 import React, { Component } from 'react';
 
 class Boton extends Component {
-  
-  constructor (props){
-    super(props);
-     this.state = {  //estado inicial antes de mostrarse en el DOM
-      texto: '',
-    };
-     console.log(this.state.texto,"soy constructor del padre, antes de pintar ");
-      //aqui da igual poner algo que no , porque no se va a reenderizar
-    }
-
+  //para que voy a hacer un constructor? si no voy a dar valor a ninguna variable
   render() {
 
        const {texto} = this.props; 

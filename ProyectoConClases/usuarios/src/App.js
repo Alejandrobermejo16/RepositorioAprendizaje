@@ -12,14 +12,14 @@ export default class App extends Component {
   }
 
   render() {
-    const textoreal = this.state.nuevotexto; //ponemos esta const ya que el padre no puede cambiar por si solo el estado de la prop que se ha definido ahi
+    const textoboton = this.state.nuevotexto; //ponemos esta const ya que el padre no puede cambiar por si solo el estado de la prop que se ha definido ahi
     //como como constante todas las variables que vayamos a meter this.props
 
     
     return (
       <div className="App">
         <h3>Este es el componente</h3>
-        <Boton texto={textoreal} /> {/*texto es la propiedad de arriba texto real definida aqui*/}
+        <Boton texto={textoboton} /> {/*texto es la propiedad de arriba texto real definida aqui*/}
         <input type="text" placeholder='Introduce un texto' onChange={this.cambiotexto} /> {/*no se le puede llamar como prop porque sino no podria cambiar el estado*/}
       </div>
     );
