@@ -8,7 +8,7 @@ class Boton extends Component {
       texto: '',
     };
      console.log(this.state.texto,"soy constructor del padre, antes de pintar ");
-     //aqui da igual poner algo que no , porque no se va a reenderizar
+      //aqui da igual poner algo que no , porque no se va a reenderizar
     }
 
   render() {
