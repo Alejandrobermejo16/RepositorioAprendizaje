@@ -4,7 +4,7 @@ class Boton extends Component {
   //para que voy a hacer un constructor? si no voy a dar valor a ninguna variable
   render() {
 
-       const {texto} = this.props; 
+      const {texto} = this.props; 
        //para poder utilizar la prop sin referenciar this.props en el return
 
     return (
