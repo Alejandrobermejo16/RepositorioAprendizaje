@@ -4,6 +4,8 @@ import Navegador from "./Navegador";
 import BarraBusqueda from "./BarraBusqueda";
 import Tarjeta from "./Tarjeta";
 const Ventana = () =>{
+
+
     return(
 
    <div className='contenedor-principal-ventana' >

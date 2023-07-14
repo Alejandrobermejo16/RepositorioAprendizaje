@@ -66,10 +66,11 @@ input{
 .tarjeta{
     width: 400px;
     height: 400px;
-    display: flex;
+    display: block;
     justify-content: center;
     border-radius: 15px;
     background-color: black;
     color: white;
+    border: 1px solid white;
 }
 
