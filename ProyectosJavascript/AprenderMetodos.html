@@ -100,4 +100,78 @@ function nombrescambiados(casamiento){
 nombrescambiados(casamiento);
 console.log(casamiento);
 
+
+{/*Elimina el primer elemento de un array*/}
+
+let futbolistas = ['Lionel Andres Messi','Marcos Sena','Radamel Falcao'];
+
+function quitaPrimerElemento(param1) {
+    param1.shift();
+}
+
+quitaPrimerElemento(futbolistas);
+console.log(futbolistas);
+
+{/*Agrega un elemento al principio del array*/}
+
+let razaPerro = ['Pastor Aleman','Golden','Chigugua'];
+
+function quitaPrimerElemento(param1) {
+    param1.unshift('Pomeraniang');
+}
+
+quitaPrimerElemento(razaPerro);
+console.log(razaPerro);
+
+{/*Utiliza una funcion en la que puedas aplicar el metodo slice*/}
+
+function copiaDatos(param1){
+  resultado = param1.slice(0, 2);  //indice 0 , devolucion de 2 parametros
+}
+copiaDatos(razaPerro);
+console.log(resultado);
+
+
+{/*Utiliza una funcion en la que puedas aplicar el metodo concat*/}
+
+function uneDatos(param1){
+  resultado = param1.concat(futbolistas);
+}
+uneDatos(razaPerro);
+console.log(resultado);
+
+
+{/*Tenemos una pagina que guarda por un lado la ficha de cliente y el codigo de perro y queremos guardar ambos en una nueva lista
+para tenerlos mejor identificados realiza una funcion que simplifique esta accion*/}
+
+const clientesyperros = {
+    "Cholo": "Alejandro Bermejo",
+    "Nala": "Teresa Sainz Maza",
+    "Perla": "Faustino Lopez" ,
+};
+
+const clientesYPerros = Object.entries(clientesyperros);
+console.log(clientesYPerros); 
+
+{/*Método: Array.prototype.join()
+Descripción: Convertir un arreglo en una cadena de texto, uniendo todos los elementos con un separador. Parámetros: Separador (opcional).*/}
+
+const names = [
+  { name: "Juan", age: 25 },
+  { name: "María", age: 23 },
+  { name: "Pedro", age: 21 },
+];
+
+const joinedNames = names.map(name => name.name).join(", ");
+
+console.log(joinedNames); // Juan, María, Pedro
+
+{/*Método: Array.prototype.forEach()
+Descripción: Ejecutar una función para cada elemento del arreglo. Parámetros: Función de callback (elemento, índice, arreglo).*/}
+
+const arrayLibros = ['Libro1','Libro2','Libro3'];
+
+arrayLibros.forEach(libro => console.log(libro));
+
+
 </script>
