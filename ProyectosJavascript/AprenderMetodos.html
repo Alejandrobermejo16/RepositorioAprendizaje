@@ -1,0 +1,103 @@
+<script>
+
+    {/*Escribe una función que reciba una cadena como parámetro y devuelva la posición de
+     la primera ocurrencia de una subcadena en la cadena. Usa el método indexOf() para
+     encontrar la posición de la subcadena.
+     */}
+
+    let palabra_a_buscar = "parece que la cosa se puede animar"
+    function primeraPosicion(palabra) {
+        resultado = palabra.indexOf("animar");
+        console.log("La palabra se encuentra en la posicion ", resultado);
+    }
+    primeraPosicion(palabra_a_buscar);
+
+
+    {/*Escribe una función que reciba una cadena como parámetro y devuelva true si la 
+     cadena contiene una subcadena, o false si la cadena no contiene la subcadena. Usa 
+     el método indexOf() para comprobar si la cadena contiene la subcadena.*/}
+
+    let palabra = "tener unas buenas bases es fundamental para aprender programacion "
+
+    function hayono(palabra2) {
+
+        resultado = palabra2.indexOf("nada que ver");
+        console.log(resultado !== -1 ? 'la palabra se encuentra aqui' : 'no hay resultados para esta palabra')
+    }
+    hayono(palabra);
+
+    {/*Escribe una función que reciba una cadena como parámetro y devuelva el carácter 
+    que se encuentra en una posición determinada en la cadena. Usa el método charAt()
+    para obtener el carácter de la posición determinada en la cadena.*/}
+
+    let palabrita = "hola mundo , ya estamos programando"
+    function caracter(palabra) {
+
+        resultado = palabra.charAt(11);
+        console.log("Queremos mostrar la , ", resultado);
+    }
+    caracter(palabrita);
+
+
+    {/*Escribe una función que reciba una cadena como parámetro y devuelva la cantidad de
+     veces que aparece una subcadena en la cadena.
+    El metodo match utiliza expresiones regulares para realizar busquedas*/}
+    let cadena = 'esto es una o unas pruebas prueba prueba';
+
+    function numero_veces(param1) {
+        let resultado = cadena.match(/prueba/g);
+        let contador = 0;
+        for (let i = 0; i < resultado.length; i++) {
+            contador++;
+        }
+        return contador;
+    }
+
+    let contador = numero_veces(cadena);
+    console.log("La palabra prueba aparece ", contador, " veces en esta frase");
+
+    {/*Agregar elementos al final de un arreglo. Parámetros: Elementos a añadir al arreglo.*/ }
+
+    let vacio = [];
+    let fecha_nacimiento = 16041997;
+    let nombre_Completo = 'Alejandro Bermejo Mendez';
+    let puesto = 'Desarrollador Web';
+
+    function añadirElementos(vacio) {
+        vacio.push(nombre_Completo, fecha_nacimiento, puesto);
+    }
+    añadirElementos(vacio);
+    console.log(vacio);
+
+
+    {/*Elimina el ultimo elemento de un array*/}
+    let vacio2 = ['Luis', 'soltero'];
+    function quitar(){
+        vacio2.pop('soltero');
+    }
+    quitar(vacio2);
+    console.log(vacio2);
+
+{/*En el siguiente programa hemos añadido por error a la fecha de casamiento 
+una fecha equivocada y queremos cambiarla quitandola del dato que la contiene y sustituyendola
+como lo hariamos*/}
+
+let casamiento = ['Andrea','Matias','160497'];
+function sustituir(casamiento){
+
+    casamiento.pop('160497');
+    casamiento.push('12122022');
+
+}
+sustituir(casamiento);
+console.log(casamiento);
+
+{/*Accede a una posicion del array y realiza la misma accion pero cambiando uno de los nombres*/}
+
+function nombrescambiados(casamiento){
+   casamiento.splice(0, 1, 'Rocio'); //posicion de la que borro, cuantos elementos borro , que añado en su lugar
+}
+nombrescambiados(casamiento);
+console.log(casamiento);
+
+</script>
