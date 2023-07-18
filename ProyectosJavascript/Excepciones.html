@@ -1,0 +1,117 @@
+<h1>Para ver el resultado de los ejercicios accede al inspector de Google o el navegador que utilices y pincha en el
+    apartado console
+    Gracias
+</h1>
+
+
+<script>
+
+{
+        /*Ejemplo para realizar una excepcion
+
+    try {
+       throw new Error("Esta es una excepción.");
+        } catch (e) {
+        console.log(e.message);
+
+
+      hay diferentes tipos de excepciones en JavaScript. Los tipos de excepciones más comunes son:
+
+      Error: Una excepción general que puede ser causada por una variedad de factores, como errores de programación, entrada de usuario inválida o condiciones de error.
+      TypeError: Una excepción que ocurre cuando se intenta usar un tipo de datos incorrecto en una operación.
+      ReferenceError: Una excepción que ocurre cuando se intenta acceder a una variable que no está definida.
+      RangeError: Una excepción que ocurre cuando un valor está fuera de un rango válido.
+      SyntaxError: Una excepción que ocurre cuando el código no está bien formado.
+    }*/
+}
+
+
+    {/*Escribe un programa que intente dividir un número por cero. Si la división no es posible, captura la excepción e imprime un mensaje de error.
+    
+        
+    
+    */ }
+
+    function divide(a, b) {
+        try {
+            if (b === 0) {
+                throw new Error("El divisor no puede ser cero");
+            } else if (a % 2 === 0) {
+                return a / b;
+            } else {
+                throw new Error("El número no es divisible por 2");
+            }
+        } catch (e) {
+            console.log(e.message);
+        }
+    }
+
+    let resultado = divide(10, 0);
+    console.log(resultado); // El divisor no puede ser cero
+
+    let resultado2 = divide(11, 2);
+    console.log(resultado2); // El número no es divisible por  0);
+    console.log(resultado);
+
+    {/*Escribe un programa que intente leer un archivo que no existe. Si el archivo no existe, captura la excepción e imprime un mensaje de error.*/}
+    try {
+  fs.readFile('myfile.txt', (err, data) => {
+    if (err) {
+      console.error(err);
+    } else {
+      console.log(data);
+    }
+  });
+} catch (e) {
+  console.error('El archivo no existe o  no se ha importado correctamente en el archivo');
+}
+
+{/*Escribe un programa que intente crear un objeto con un nombre de propiedad inválido. Si el nombre de la propiedad es inválido,
+ captura la excepción e imprime un mensaje de error.*/}
+
+ const obj = {};
+
+try {
+  if (obj) {
+    ob.c = 1; //error provocado aqui
+  } else {
+    console.log('El objeto no existe.');
+  }
+} catch (e) {
+  console.error(e);
+}
+
+{/*Escribe un programa que intente llamar a una función que no existe. Si la función no existe, captura la excepción e imprime un mensaje de error.*/}
+
+
+try {
+  functionNoExistente();  //no se ha creado en ningun lado
+} catch (e) {
+  if (e instanceof ReferenceError) {
+    console.error("La función no existe , se esta llamando mal o no ha sido creada.");
+  } else {
+    console.error(e);
+  }
+}
+
+
+{/*Escribe un programa que intente llamar a un método de un objeto que no existe. Si el método no existe, captura la excepción e imprime un mensaje de error.*/}
+
+//Tambien ayuda con la creacion de metodos dentro de un objeto
+const objeto = {
+  metodo1() {
+    console.log('Este es el método 1');
+  },
+  metodo2() {
+    console.log('Este es el método 2');
+  },
+};
+
+try {
+  objeto.metodo3();
+} catch (e) {
+  console.error('El método no existe');
+}
+
+
+</script>

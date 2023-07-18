@@ -1,3 +1,8 @@
+<h1>Para ver el resultado de los ejercicios accede al inspector de Google o el navegador que utilices y pincha en el apartado console
+    Gracias
+</h1>
+
+
 <script>
 
  {/* 1 Escribe una función que reciba dos números como parámetros y devuelva el mayor de los dos. 
@@ -20,5 +25,32 @@
     par(-13);
     console.log(resultado);
 
+    {/*Escribir un código que compruebe si un objeto es nulo o indefinido. Si el objeto es nulo o indefinido, el código debe imprimir "objeto nulo o indefinido".
+     Si el objeto no es nulo o indefinido, el código debe imprimir el nombre del objeto*/}
+
+     const nuloindefinido = 'Alejandro';
+     resultado = nuloindefinido === null ? 'Es nulo o indefinido': nuloindefinido;
+     console.log(resultado);
+
+     {/*Escribir un código que compruebe si una variable es un número, una cadena o un objeto. Si la variable es un número, 
+     el código debe imprimir "número". Si la variable es una cadena, 
+     el código debe imprimir "cadena". Si la variable es un objeto, el código debe imprimir "objeto".*/}
+
+    let variable = 1;
+    resultado = typeof variable === "number" ? "numero" : typeof variable === "string" ? "cadena" : "objeto";
+    console.log(resultado);
+
+
+    {/*Escribir un código que compruebe si un número es divisible por 2, 3 o 5. Si el número es divisible por 2, el código debe imprimir "par". Si el número es divisible por 3, el código debe imprimir "divisible por 3". Si el número es divisible por 5, el código debe imprimir
+     "divisible por 5". Si el número no es divisible por 2, 3 o 5, el código debe imprimir "no divisible".*/}
+     const numero = 15;
+
+    resultado2 = numero % 2 === 0 ? "par" : numero % 5 === 0 ? "divisible por 5" : numero % 3 === 0 ? "divisible por 3" : numero % 7 === 0 ? "divisible por 7" : "no divisible";
+
+
+
+
+
+    console.log(resultado2); 
 
 </script>
