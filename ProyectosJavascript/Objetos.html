@@ -1,0 +1,71 @@
+<h1>Para ver el resultado de los ejercicios accede al inspector de Google o el navegador que utilices y pincha en el apartado console
+    Gracias
+</h1>
+
+<script>
+
+    /*datos que puede contener un objeto*/
+/*cualquiera, metodos, funciones, arrays, otros objetos, numeros, cadenas true etc*/
+
+/*Crea un objeto que represente un coche. El objeto debe tener las siguientes propiedades:
+
+marca: La marca del coche.
+modelo: El modelo del coche.
+año: El año del coche.
+color: El color del coche.
+kilometraje: El kilometraje del coche. */
+
+const coche = {
+    marca: 'Hiunday',
+    modelo: 'Ionic',
+    color: 'blanco',
+    km: 1500,
+    ano: 1887 ,        //mucho ojo con poner una ñ , porque el navegador no la detecta como valida
+    ['año'] : 1997                //o hacer esto aunque aparecera mal en el navegador
+}
+console.log(coche);
+
+
+/*Crea un objeto que represente a una persona. El objeto debe tener las siguientes propiedades:
+nombre: El nombre de la persona.
+edad: La edad de la persona.
+direccion: Un objeto que contiene la dirección de la persona.
+telefono: El número de teléfono de la persona.
+email: El correo electrónico de la persona.
+La propiedad direccion debe tener las siguientes propiedades:
+* calle: La calle de la dirección de la persona.
+* numero: El número de la dirección de la persona.
+* ciudad: La ciudad de la dirección de la persona.
+* pais: El país de la dirección de la persona.*/
+
+const persona = {
+    nombre: 'Julio',
+    edad:26,
+    direccion:{
+        calle: 'Rosalinda del barrio de la cruz',
+        num: 14,
+        ciudad: 'madrid'
+    },
+    telefono:649826548 ,
+    email: 'abermejocv@gmail.com'
+
+}
+
+console.log("la calle es, ",persona.direccion.calle); /*Se muestra el dato que existe dentro del objeto */
+
+
+/*crea un objeto e intenta cambiar el valor de la propiedad de ese objeto con un metodo que tambien este dentro de ese objeto principal
+};*/
+
+const peces = {
+    raza: 'guppy',
+    cambiarraza(nuevaraza){
+        this.raza = nuevaraza;
+    }
+}
+
+console.log(peces); 
+peces.cambiarraza('neon'); //se accede al metodo igual que a cualquier propiedad y se cambia la raza
+console.log(peces);
+
+</script>
