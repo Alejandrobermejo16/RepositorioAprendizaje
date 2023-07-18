@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejercicio 2</title>
+</head>
+
+<body>
+    <h1>Mi página web ejercicio2</h1>
+    <p>Este es el texto de mi página web. ejercicio 2</p>
+
+    <button id="boton">Haz clic en mí ejercicio1</button>
+    <button id="boton2">Haz clic en mí ejercicio2</button>
+    <button id="boton3">Pasa el raton por encima ejercicio3</button>
+    <button id="boton4">Tipos de eventos
+        <li>click: Se produce cuando el usuario hace clic en el elemento.
+        <li> mouseover: Se produce cuando el ratón pasa por encima del elemento.
+        </li>
+        <li> mouseout: Se produce cuando el ratón sale del elemento.
+        </li>
+        <li> keydown: Se produce cuando el usuario pulsa una tecla.
+        </li>
+        <li> load: Se produce cuando la página se carga.
+        </li>
+        <li> unload: Se produce cuando la página se descarga.
+        </li>
+        <li> scroll: Se produce cuando la página se desplaza.</li>
+        </li>
+        <li> keyup: Se produce cuando el usuario deja de pulsar una tecla.
+        </li>
+        <li> resize: Se produce cuando la ventana se redimensiona.
+        </li>
+    </button>
+
+
+
+
+    <script>
+        const boton = document.querySelector("#boton");   //la constante obtiene la identificacion del boton
+        boton.addEventListener("click", () => {            //llama al metodo eventListener, pasandole como paramtetro tipo de evento y una funcion 
+            console.log("¡Has hecho clic en el botón!");     //que al ser llamada devuelve lo que hay dentro de los parentesis
+        });
+
+        const boton2 = document.querySelector("#boton2");
+        boton2.addEventListener("click", () => {
+            document.querySelector("h1").textContent = "¡Has hecho clic en el botón 2!";
+        });
+        const boton3 = document.querySelector("#boton3");
+        boton3.addEventListener("mouseover", () => {      //otro tipo de evento
+            console.log("El ratón ha pasado por encima del botón!");
+        });
+        const boton4 = document.querySelector("#boton4");
+        boton4.addEventListener("mouseout", () => {      //otro tipo de evento
+            console.log("Estas viendo todos los tipos de eventos que existen y desplazandote por la lista");
+        });
+
+        /*ANOTACION pregunta a google bard
+        no es más fácil hacer algo como esto?:
+        
+        <button onclick="funcionCambiaNombre()">
+        Este método se llama atributo onclick y es una forma más corta de añadir un evento al elemento. Sin embargo, este método sólo se puede utilizar si ya conoces el nombre de la función que quieres ejecutar.
+        
+        El método addEventListener() es más flexible, ya que te permite añadir un evento al elemento incluso si no conoces el nombre de la función que quieres ejecutar. También te permite añadir más de un evento al mismo elemento.
+        
+        En general, es mejor utilizar el método addEventListener() en lugar del atributo onclick. El método addEventListener() es más flexible y te permite añadir más eventos al mismo elemento.*/
+
+    </script>
+
+</body>
+
+</html>
