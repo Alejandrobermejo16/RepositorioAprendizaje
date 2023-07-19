@@ -5,11 +5,12 @@ podria llegar a costarme dinero*/
 import React, { useState, useEffect } from 'react';
 
 const Libros = ({ query }) => {
+  /**Recibe la prop query, que contiene el término de búsqueda enviado desde el componente Boton (se importa en el hijo, Pantalla) */
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
     // Replace "YOUR_API_KEY" with your actual Google Books API key
-    const API_KEY = 'tuapikey';
+    const API_KEY = 'TUAPIKEYDEGOOGLEGCP';
     const url = `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(query)}&key=${API_KEY}`;
 
     fetch(url)
@@ -24,9 +25,9 @@ const Libros = ({ query }) => {
 
   return (
     <div>
-      <h1>List of Books</h1>
+      <h1>Lista De Libros</h1>
       <ul>
-        {books.map((book) => (
+        {books.map((book) => (   //recorre todos los id y titulos del objeto Json que sacamos en la peticion
           <li key={book.id}>{book.volumeInfo.title}</li>
         ))}
       </ul>
