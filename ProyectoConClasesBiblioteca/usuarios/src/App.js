@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Boton from './componentes/Boton';
 import './App.css';
+import Pantalla from './componentes/Pantalla';
 
 export default class App extends Component {
   constructor(props) {
@@ -18,9 +18,9 @@ export default class App extends Component {
     
     return (
       <div className="App">
-        <h3>Este es el componente</h3>
-        <Boton texto={textoboton} /> {/*texto es la propiedad de arriba texto real definida aqui*/}
-        <input type="text" placeholder='Introduce un texto' onChange={this.cambiotexto} /> {/*no se le puede llamar como prop porque sino no podria cambiar el estado*/}
+        <h3>Este es el valor de la prop</h3>
+        <Pantalla texto={textoboton} /> {/*texto es la propiedad de arriba texto real definida aqui*/}
+        <input type="text" placeholder='Introduce arriba el titulo' onChange={this.cambiotexto} /> {/*no se le puede llamar como prop porque sino no podria cambiar el estado*/}
       </div>
     );
   }
