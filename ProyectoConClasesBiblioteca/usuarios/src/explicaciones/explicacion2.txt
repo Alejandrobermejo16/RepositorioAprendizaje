@@ -1,0 +1,28 @@
+Preguntas a chat gpt:
+
+barrabusqueda envia el valor recogido al componente Libros Libros recoge el valor que tiene la query
+ de barrabusqueda y hace una llamada a la api dejando en query la respuesta obtenida y luego en Pantalla
+  o Boton, no se como lo deja al final, lo que se hace es poner un estado local a query para que empiece
+   con ese estado, se incluyen los otros dos botones que ya tienen la funcionalidad y se pone en el componente 
+   pantalla el metodo que hace que se vayan lanzando los cambios en la consulta
+
+
+Respuesta:
+Comentario : Tu resumen es bastante preciso, pero permíteme completarlo para mayor claridad:
+
+BarraBusqueda : Correcto, la BarraBusquedarecoge el valor ingresado por el usuario en el input de búsqueda y lo envía al componente Librosutilizando la función onBuscar. La función onBuscarse pasa como una prop desde el componente Botonal componente BarraBusqueda.
+
+Libros : Exacto, el componente Librosrecibe el valor de búsqueda ( query) desde el componente BarraBusqueda. Cuando querycambia (debido a una nueva búsqueda ingresada por el usuario), el componente Libroshace una llamada a la API de Google Books con el valor de búsqueda actualizado. Luego, la respuesta de la API se utiliza para actualizar el estado local books, lo que provoca una nueva renderización del componente y muestra los títulos de los libros relacionados.
+
+Boton (o Pantalla) : En este componente, la variable queryse inicializa con un valor predeterminado en su estado local. Luego, el componente contiene los componentes Librosy BarraBusqueda. Cuando el usuario utiliza la barra de búsqueda en BarraBusqueda, se actualiza el estado queryen el componente Botoncon el nuevo término de búsqueda ingresado. Al cambiar query, se dispara una nueva llamada a la API y se actualiza el componente Libroscon los nuevos resultados.
+
+En general, ha funcionado correctamente cómo se comunican y funcionan los componentes para realizar búsquedas de libros y mostrar los resultados en la aplicación. ¡Muy bien! Si tienes alguna otra pregunta o necesitas más aclaraciones, no dudes en preguntar
+
+
+
+
+Nueva Pregunta:
+y por ejemplo, BarraBusqueda no se importa en Libros porque luego se importan los dos en pantalla , sino existiera pantalla , barrabusqueda se deberia de importar en Libros verdad?
+
+Respuesta:
+Exactamente, si el componente Pantallano existiera y los componentes BarraBusqueday Librosexclusivos utilizados de forma independiente, entonces el componente Librosdebería importar y utilizar directamente el componente BarraBusquedapara realizar las búsquedas.

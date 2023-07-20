@@ -10,7 +10,7 @@ const Libros = ({ query }) => {
 
   useEffect(() => {
     // Replace "YOUR_API_KEY" with your actual Google Books API key
-    const API_KEY = 'TUAPIKEYDEGOOGLEGCP';
+    const API_KEY = 'AIzaSyARwQwqc8Ip_BKDtFzR24xLwcy3krJ0j5Y';
     const url = `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(query)}&key=${API_KEY}`;
 
     fetch(url)
