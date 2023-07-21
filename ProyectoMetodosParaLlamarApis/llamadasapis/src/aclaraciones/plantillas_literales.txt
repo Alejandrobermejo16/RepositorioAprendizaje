@@ -1,0 +1,34 @@
+(SIRVEN PARA PODER METER EN UNA CADENA "hola/" la variable de javascript que le pasamos por ejemplo desde un input)
+(nueva cadena const cadena_nueva = `hola/${nombre}`)
+
+
+Con las plantillas de cadenas ( ``o comillas invertidas), puedes interpolar (incrustar) valores de variables y expresiones de JavaScript directamente en una cadena.
+
+En lugar de concatenar manualmente las variables con la cadena, lo cual puede ser tedioso y probablemente a errores, puede usar la sintaxis ${variable}dentro de una plantilla de cadena para insertar el valor de la variable directamente en la cadena. Esto se conoce como interpolación de cadenas.
+
+Aquí tienes un ejemplo simple de cómo funciona la interpolación de cadenas con plantillas de cadenas:
+
+javascript
+
+Copiar código
+const nombre = "John";
+const edad = 30;
+
+// Usando concatenación tradicional
+const mensaje1 = "Hola, mi nombre es " + nombre + " y tengo " + edad + " años.";
+
+// Usando plantillas de cadenas (interpolación)
+const mensaje2 = `Hola, mi nombre es ${nombre} y tengo ${edad} años.`;
+
+console.log(mensaje1); // "Hola, mi nombre es John y tengo 30 años."
+console.log(mensaje2); // "Hola, mi nombre es John y tengo 30 años."
+La segunda opción ( mensaje2) es más legible y más fácil de mantener que la primera ( mensaje1). Además, la interpolación de cadenas también admite expresiones JavaScript dentro de las llaves ${}. Esto significa que puedes realizar cálculos y otras operaciones y luego mostrar el resultado directamente dentro de la cadena.
+
+javascript
+
+Copiar código
+const a = 10;
+const b = 5;
+
+const suma = `La suma de ${a} y ${b} es ${a + b}.`; // "La suma de 10 y 5 es 15."
+La utilización de plantillas de cadenas con interpolación es una práctica común en el desarrollo moderno de JavaScript y hace que el código sea más legible y expresivo.
