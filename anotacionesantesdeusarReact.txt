@@ -1,0 +1,11 @@
+1º a tener en cuenta
+ 
+-un componente funcional y de clase no son lo mismo, los hooks ayudan por ejemplo a cambiar de estado o manejar efectos
+-un componente de clase , tiene constructor donde se puede dar estado a una constante pero no se va a pintar hasta que no lo hagamos en el render
+
+
+-ciclos de vida de un componente importantisimo y sobretodo al trabajar con clases 
+1-constructor no se pinta aun en el dom
+2-render pinta en dom
+3-componentdidmount (coge el estado anterior del componente y lo reenderiza con el nuevo)
+4-componentwillunmount (estado que queremos que se quede en nuestro componente al desaparecer del dom)

@@ -14,7 +14,7 @@ const BarraBusqueda = () =>{
     return(
 
     <div className="barra-busqueda">
-        <input type="text" placeholder="Pulsa en Aleatorio"  />
+        <input type="text" placeholder="A falta de llamar a la api correspondiente"  />
         {/*<input type="text" placeholder="Pulsa en Aleatorio" onChange={(e) =>setAnimal{e.target.value}} />*/}
         <button type="submit" onClick={onSubmit}>Aleatorio</button>
     </div>
