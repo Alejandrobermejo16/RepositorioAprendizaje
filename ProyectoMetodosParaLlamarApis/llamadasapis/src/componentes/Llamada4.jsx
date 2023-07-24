@@ -4,7 +4,7 @@
 
 import React, { useState } from "react";
 
-const PokemonInfo = () => {
+const Llamada4 = () => {
   const [pokemonName, setPokemonName] = useState("");
   const [pokemonData, setPokemonData] = useState(null);
 
@@ -29,12 +29,12 @@ const PokemonInfo = () => {
   return (
     <div>
       <input type="text" value={pokemonName} onChange={handleInputChange} />
-      <button onClick={handleSearch}>Buscar</button>
+      <button onClick={handleSearch}>Llamada4</button>
 
       {pokemonData && (
         <>
           <h1>{pokemonData.name}</h1>
-          <p>Habilidades: {pokemonData.abilities.map(ability => ability.ability.name).join(", ")}</p>
+          <p>Habilidades2: {pokemonData.abilities.map(ability => ability.ability.name).join(", ")}</p>
           {/* Otra información que desees mostrar */}
         </>
       )}
@@ -42,4 +42,4 @@ const PokemonInfo = () => {
   );
 };
 
-export default PokemonInfo;
+export default Llamada4;

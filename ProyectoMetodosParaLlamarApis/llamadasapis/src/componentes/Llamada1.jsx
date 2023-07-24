@@ -1,5 +1,5 @@
 //ponemos lo basico para entender como se hace una llamada a la api
-
+import React from "react";
 
 
 const Llamada1 = () => {
