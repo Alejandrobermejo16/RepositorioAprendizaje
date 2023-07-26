@@ -2,9 +2,7 @@ import React from "react";
 import '../estilos/App.css';
 const Tarjeta = () =>{
 
-let nose = 1;
-let resultado = nose === 1 ? 'si es uno':'no es uno'
-console.log(resultado);
+
     return(
 
       
