@@ -6,7 +6,7 @@ function App() {
     <div className="App">
       
       <h1 className='title'>FakeStore</h1>
-       < Productos  />
+       < Productos />
     </div>
   );
 }
