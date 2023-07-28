@@ -5,14 +5,15 @@ function Productos() {
 
     const [productos, setProductos] = useState([]);
     //estado inicial
-    const [productoPorPagina, setProductoPorPagina] = useState(6);
+    const [productoPorPagina, setProductoPorPagina] = useState(2);      //esta es la limitacion que funciona
     //los productos que quiero poner en cada pagina
     const [paginaActual, setPaginaActual] = useState([]);
     //pagina en la que estamos
 
     //llamada a la api
     const ListaProductos = async () => {
-        const datos = await fetch('https://fakestoreapi.com/products');
+        const datos = await fetch(`https://fakestoreapi.com/products?limit=${productoPorPagina}&offset=${(paginaActual - 1) * productoPorPagina}`);
+        //limite 6 
         const productos = await datos.json();
 
         setProductos(productos);
