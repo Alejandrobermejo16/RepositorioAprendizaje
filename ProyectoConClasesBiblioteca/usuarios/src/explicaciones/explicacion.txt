@@ -1,0 +1,25 @@
+
+Componente BarraBusqueda: 
+Este componente es una función de React que representa una barra de búsqueda con una entrada y un botón. 
+Aquí se define un estado local llamado query, que almacenará el término de búsqueda ingresado por el usuario 
+en el input. Cuando el usuario escribe algo en el input, el evento onChangese activa, y la función handleChangese
+ ejecuta, actualizando el estado querycon el valor del input.
+
+
+Componente Boton: 
+Este componente es una clase que representa un botón que se muestra en la pantalla. Además de mostrar el botón, este componente incluye otros dos componentes: Librosy BarraBusqueda. Al usar el componente Libros, se pasa una prop queryal componente. La prop queryalmacenará el término de búsqueda ingresado por el usuario en la barra de búsqueda. La función handleBuscarse pasa como prop al componente BarraBusqueda, permitiendo que la barra de búsqueda notifique al componente Botoncuando el usuario envía una nueva búsqueda.
+
+
+Componente Libros: 
+Este componente es una función que muestra una lista de títulos de libros. Receive the prop query, que contiene el término de búsqueda enviado desde el componente Boton. Cuando el componente Librosse monta o cuando la prop querycambia, se realiza una solicitud a la API de Google Books para obtener los libros que coinciden con el término de búsqueda. Si la solicitud es exitosa, los datos se guardan en el estado local booksusando useState. Finalmente, se muestra una lista de los títulos de los libros en el componente.
+
+
+
+Relación entre componentes: 
+La relación entre los tres componentes es la siguiente:
+
+El componente Botoncontiene el componente Librosy BarraBusqueda.
+El componente Librosrecibe la prop querydel componente Boton, que contiene el término de búsqueda ingresado por el usuario en la barra de búsqueda.
+El componente BarraBusquedarecibe la función onBuscardel componente Boton, que le permite notificar al componente Botoncuando el usuario envía una nueva búsqueda.
+Cuando el usuario escribe algo en la barra de búsqueda y hace clic en el botón "Buscar", se actualiza la prop queryen el componente Boton, que luego se pasa al componente Libros.
+Cuando el componente Librosrecibe una nueva prop query, se realiza una solicitud a la API de Google Books para obtener los libros correspondientes al término de búsqueda, y los resultados se muestran en el componente.

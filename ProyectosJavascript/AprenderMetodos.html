@@ -1,0 +1,199 @@
+<h1>Para ver el resultado de los ejercicios accede al inspector de Google o el navegador que utilices y pincha en el apartado console
+    Gracias
+</h1>
+
+<script>
+
+    {/*Escribe una función que reciba una cadena como parámetro y devuelva la posición de
+     la primera ocurrencia de una subcadena en la cadena. Usa el método indexOf() para
+     encontrar la posición de la subcadena.
+     */}
+
+    let palabra_a_buscar = "parece que la cosa se puede animar"
+    function primeraPosicion(palabra) {
+        resultado = palabra.indexOf("animar");
+        console.log("La palabra se encuentra en la posicion ", resultado);
+    }
+    primeraPosicion(palabra_a_buscar);
+
+
+    {/*Escribe una función que reciba una cadena como parámetro y devuelva true si la 
+     cadena contiene una subcadena, o false si la cadena no contiene la subcadena. Usa 
+     el método indexOf() para comprobar si la cadena contiene la subcadena.*/}
+
+    let palabra = "tener unas buenas bases es fundamental para aprender programacion "
+
+    function hayono(palabra2) {
+
+        resultado = palabra2.indexOf("nada que ver");
+        console.log(resultado !== -1 ? 'la palabra se encuentra aqui' : 'no hay resultados para esta palabra')
+    }
+    hayono(palabra);
+
+    {/*Escribe una función que reciba una cadena como parámetro y devuelva el carácter 
+    que se encuentra en una posición determinada en la cadena. Usa el método charAt()
+    para obtener el carácter de la posición determinada en la cadena.*/}
+
+    let palabrita = "hola mundo , ya estamos programando"
+    function caracter(palabra) {
+
+        resultado = palabra.charAt(11);
+        console.log("Queremos mostrar la , ", resultado);
+    }
+    caracter(palabrita);
+
+
+    {/*Escribe una función que reciba una cadena como parámetro y devuelva la cantidad de
+     veces que aparece una subcadena en la cadena.
+    El metodo match utiliza expresiones regulares para realizar busquedas*/}
+    let cadena = 'esto es una o unas pruebas prueba prueba';
+
+    function numero_veces(param1) {
+        let resultado = cadena.match(/prueba/g);
+        let contador = 0;
+        for (let i = 0; i < resultado.length; i++) {
+            contador++;
+        }
+        return contador;
+    }
+
+    let contador = numero_veces(cadena);
+    console.log("La palabra prueba aparece ", contador, " veces en esta frase");
+
+    {/*Agregar elementos al final de un arreglo. Parámetros: Elementos a añadir al arreglo.*/ }
+
+    let vacio = [];
+    let fecha_nacimiento = 16041997;
+    let nombre_Completo = 'Alejandro Bermejo Mendez';
+    let puesto = 'Desarrollador Web';
+
+    function añadirElementos(vacio) {
+        vacio.push(nombre_Completo, fecha_nacimiento, puesto);
+    }
+    añadirElementos(vacio);
+    console.log(vacio);
+
+
+    {/*Elimina el ultimo elemento de un array*/}
+    let vacio2 = ['Luis', 'soltero'];
+    function quitar(){
+        vacio2.pop('soltero');
+    }
+    quitar(vacio2);
+    console.log(vacio2);
+
+{/*En el siguiente programa hemos añadido por error a la fecha de casamiento 
+una fecha equivocada y queremos cambiarla quitandola del dato que la contiene y sustituyendola
+como lo hariamos*/}
+
+let casamiento = ['Andrea','Matias','160497'];
+function sustituir(casamiento){
+
+    casamiento.pop('160497');
+    casamiento.push('12122022');
+
+}
+sustituir(casamiento);
+console.log(casamiento);
+
+{/*Accede a una posicion del array y realiza la misma accion pero cambiando uno de los nombres*/}
+
+function nombrescambiados(casamiento){
+   casamiento.splice(0, 1, 'Rocio'); //posicion de la que borro, cuantos elementos borro , que añado en su lugar
+}
+nombrescambiados(casamiento);
+console.log(casamiento);
+
+
+{/*Elimina el primer elemento de un array*/}
+
+let futbolistas = ['Lionel Andres Messi','Marcos Sena','Radamel Falcao'];
+
+function quitaPrimerElemento(param1) {
+    param1.shift();
+}
+
+quitaPrimerElemento(futbolistas);
+console.log(futbolistas);
+
+{/*Agrega un elemento al principio del array*/}
+
+let razaPerro = ['Pastor Aleman','Golden','Chigugua'];
+
+function quitaPrimerElemento(param1) {
+    param1.unshift('Pomeraniang');
+}
+
+quitaPrimerElemento(razaPerro);
+console.log(razaPerro);
+
+{/*Utiliza una funcion en la que puedas aplicar el metodo slice*/}
+
+function copiaDatos(param1){
+  resultado = param1.slice(0, 2);  //indice 0 , devolucion de 2 parametros
+}
+copiaDatos(razaPerro);
+console.log(resultado);
+
+
+{/*Utiliza una funcion en la que puedas aplicar el metodo concat*/}
+
+function uneDatos(param1){
+  resultado = param1.concat(futbolistas);
+}
+uneDatos(razaPerro);
+console.log(resultado);
+
+
+{/*Tenemos una pagina que guarda por un lado la ficha de cliente y el codigo de perro y queremos guardar ambos en una nueva lista
+para tenerlos mejor identificados realiza una funcion que simplifique esta accion*/}
+
+const clientesyperros = {
+    "Cholo": "Alejandro Bermejo",
+    "Nala": "Teresa Sainz Maza",
+    "Perla": "Faustino Lopez" ,
+};
+
+const clientesYPerros = Object.entries(clientesyperros);
+console.log(clientesYPerros); 
+
+{/*Método: Array.prototype.join()
+Descripción: Convertir un arreglo en una cadena de texto, uniendo todos los elementos con un separador. Parámetros: Separador (opcional).*/}
+
+const names = [
+  { name: "Juan", age: 25 },
+  { name: "María", age: 23 },
+  { name: "Pedro", age: 21 },
+];
+
+const joinedNames = names.map(name => name.name).join(", ");
+
+console.log(joinedNames); // Juan, María, Pedro
+
+{/*Método: Array.prototype.forEach()
+Descripción: Ejecutar una función para cada elemento del arreglo. Parámetros: Función de callback (elemento, índice, arreglo).*/}
+
+const arrayLibros = ['Libro1','Libro2','Libro3'];
+
+arrayLibros.forEach(libro => console.log(libro));
+
+
+{/*metodo map Parámetros de la función map:
+
+elemento: El elemento actual del arreglo que está siendo procesado en la iteración actual.
+
+indice(opcional): El índice del elementoactual dentro del arreglo.
+
+array(opcional): El arreglo original que está siendo recorrido.
+
+La función que pasa como argumento a maprecibe tres parámetros, pero generalmente solo necesita el primer parámetro, que es el elemento. El indicey arrayse utilizan en casos donde es necesario acceder a ellos durante la transformación del arreglo, pero no siempre son requeridos.
+
+La función mapno modifica el arreglo original, sino que crea un nuevo arreglo con los resultados de la transformación. Es importante tener en cuenta que mapno afecta el arreglo original, sino que devuelve un nuevo arreglo con los elementos transformados.
+
+Recuerda que mapes una herramienta poderosa para transformar datos de un array de forma declarativa y es una función muy útil en la programación funcional y en el trabajo con arrays en JavaScript.
+*/}
+
+
+
+
+</script>
