@@ -7,7 +7,8 @@ import './hojas-de-estilo/pantalla.css';
 import BotonClear from './componentes/BotonClear';
 import './hojas-de-estilo/botonclear.css'
 import { useState } from 'react';
-import {evaluate} from 'mathjs';
+import {evaluate} from 'mathjs';  //instalar si da fallo de forma manual 
+                                  //npm install mathjs
 
 function App() {
 
