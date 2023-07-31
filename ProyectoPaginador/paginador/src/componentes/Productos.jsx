@@ -5,7 +5,7 @@ function Productos() {
 
     const [productos, setProductos] = useState([]);
     //estado inicial
-    const [productoPorPagina, setProductoPorPagina] = useState(2);      //esta es la limitacion que funciona
+    const [productoPorPagina, setProductoPorPagina] = useState(1);      //esta es la limitacion que funciona
     //los productos que quiero poner en cada pagina
     const [paginaActual, setPaginaActual] = useState([]);
     //pagina en la que estamos
