@@ -1,27 +1,9 @@
 import { useState } from "react";
+import App from "../App";
 
-function Paginacion(){
-
-
+function Paginacion({paginaactual, avanzar, retroceder}){
     
-    const [paginaactual, setpaginaactual] = useState(0);
-    const [objetosporpagina] = useState(4);
-
-    function avanzar() {
-      const nuevaPaginadelante = paginaactual + 1;
-      setpaginaactual(nuevaPaginadelante);
-      return nuevaPaginadelante;
-    }
-    function retroceder() {
-        if( paginaactual > 0){
-        const nuevaPaginaatras = paginaactual - 1;
-        setpaginaactual(nuevaPaginaatras);
-        return nuevaPaginaatras;
-        }
-      }
-
-
-    
+  
 
 return (
     <div className="Paginacion">
