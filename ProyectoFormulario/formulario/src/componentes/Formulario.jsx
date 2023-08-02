@@ -21,25 +21,24 @@ function Formulario() {
     }
 
     function handleOnClick() {
-        if (valorInput1 && valorInput2) {
-            if (valorInput1.length >= 7) {
-                if (valorInput2.includes('@') === true) {
+        if (valorInput1 && valorInput2) {               //si existe contenido 
+            if (valorInput1.length >= 7) {           //si el campo nombre supera 7 caracteres
+                if (valorInput2.includes('@') === true) {       //si campo correo incluye @
                     setMensajeAutorizado('¡Acceso Autorizado!');
                     setMostrarAutorizado(true);
                     setMensajeError(false);
-                } else {
-                    //sino sigue teniendo contenido por tanto es que el @ no está bien
+                } else {             //si no hay @ porque estoy dentro del if que comprueba el segundo campo
                     setMensajeError('El correo necesita tener @');
                     setMostrarError(true);
                     setMostrarAutorizado(false);
                 }
-            } else {
+            } else {                //else del if que comprueba la longitud de los caracteres
                 setMensajeError('Introduce un minimo de 7 caracteres');
                 setMostrarError(true);
                 setMostrarAutorizado(false);
             }
         } else {
-            //y sino es porque algún campo no está relleno
+            // sino hay algun campo relleno
             setMensajeError('Por favor, rellena todos los campos');
             setMostrarError(true);
             setMostrarAutorizado(false);
