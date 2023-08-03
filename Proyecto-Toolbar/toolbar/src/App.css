@@ -1,0 +1,50 @@
+.App {
+  background-color: aqua;
+  height: 100vh;
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra horizontalmente */
+  justify-content: flex-start; /* Centra verticalmente arriba */
+}
+
+.toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #011811;
+  padding: 10px;
+}
+
+button {
+  margin: 5px auto;
+  padding: 15px 30px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #4c00ff;
+}
+
+.text-container {
+  margin-top: 40px; /* Espacio entre la toolbar y el texto */
+}
+
+.muestracontenido {
+  width: 100%;
+  max-width: 800px;
+  height: 500px;
+  background-color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: scroll; /* O cualquier otra opción */
+
+}
