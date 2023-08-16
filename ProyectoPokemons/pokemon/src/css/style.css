@@ -1,0 +1,45 @@
+.App {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: black;
+    transition: background-image 1s ease-in-out; /* Transición para el cambio de fondo */
+    background-image: url('../img/pokemon.png'); /* Cambia el fondo */
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+  
+  .App.animate {
+    background-image: url('../img/pokemon2.png'); /* Cambia el fondo */
+  }
+  h3{
+    color: blue;
+  }
+  .result {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  }
+  
+  .App.animate .result.active {
+    transform: translate(-50%, 100%);
+    opacity: 1;
+  }
+  
+  .btn {
+    position: relative;
+    z-index: 2; /* Asegura que el botón esté por encima de la animación */
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  }
+  
+  .App.animate .btn {
+    opacity: 0;
+    transform: translateY(-50px); /* Ajusta la cantidad de desplazamiento vertical */
+  }
+  
