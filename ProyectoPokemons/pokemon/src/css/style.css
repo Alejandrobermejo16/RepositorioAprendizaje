@@ -14,7 +14,7 @@
   .App.animate {
     background-image: url('../img/pokemon2.png'); /* Cambia el fondo */
   }
-  h3{
+  h1{
     color: blue;
   }
   .result {
