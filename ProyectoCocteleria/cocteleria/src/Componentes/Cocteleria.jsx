@@ -27,30 +27,33 @@ class Cocteleria extends Component {
   }
 
   render() {
-    console.log("en el componente", this.props.nameCoctel, this.state.name);
+
     const { loading, nameCoctel, error } = this.props;
-    console.log(nameCoctel.ingredients);
+
     return (
       <div>
+
+<h1>{JSON.stringify(nameCoctel.ingredients)}</h1>
+
         {nameCoctel.name ? (
           <div>
-            <h1>{nameCoctel.name}</h1>
+            <h1>{JSON.stringify(nameCoctel.name)}</h1>
             <h2>Ingredients:</h2>
             <ul>
               {nameCoctel.ingredients ? (
-              <h1>{nameCoctel.ingredients}</h1>
+            <h1>{JSON.stringify(nameCoctel.ingredients)}</h1>
 
               ) : (
                 <li>No ingredients available</li>
               )}
             </ul>
             <h2>Instructions:</h2>
-            <p>{nameCoctel.instructions}</p>
+            <p>{JSON.stringify(nameCoctel.instructions)}</p>
           </div>
         ) : (
           <p>No data available</p>
         )}
-  
+
         <input
           className="inputCoctel"
           type="text"
@@ -61,17 +64,13 @@ class Cocteleria extends Component {
         <button className="boton" onClick={this.handleFetchCoctel}>
           Fetch Coctel Name
         </button>
-        <div>
+        {/* <div>
           <p>nameCoctel: {nameCoctel}</p>
           <p>error: {error ? error.message : 'Ningún error'}</p>
-        </div>
+        </div> */}
       </div>
     );
   }
-  
-  
-  
-  
 }
 
 const mapStateToProps = (state) => {
