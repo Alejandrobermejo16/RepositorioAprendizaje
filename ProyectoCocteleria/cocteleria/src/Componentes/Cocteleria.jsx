@@ -2,61 +2,84 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchCoctelNameStart } from "../Store/actions/actions";
 
-
 class Cocteleria extends Component {
-  state = {
-    nameCoctel: "", // Aquí almacenaremos el valor del input
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      nameCoctel: "", // Aquí almacenaremos el valor del input
+    };
+  }
 
   handleInputChange = (event) => {
     this.setState({ nameCoctel: event.target.value });
-    console.log("obtenemos input",this.state.nameCoctel);
   };
 
   handleFetchCoctel = () => {
     const { nameCoctel } = this.state;
     // Llama a tu acción pasando el valor del input
     this.props.fetchCoctelNameStartAction(nameCoctel);
-    console.log("enviamos nombre",nameCoctel);
   };
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.nameCoctel !== this.props.nameCoctel) {
+      console.log("Datos actualizados:", this.props.nameCoctel);
+    }
+  }
+
   render() {
-    console.log("en el componente", this.props.nameCoctel , this.state.name );
+    console.log("en el componente", this.props.nameCoctel, this.state.name);
+    const { loading, nameCoctel, error } = this.props;
+    console.log(nameCoctel.ingredients);
     return (
       <div>
-        <input  
+        {nameCoctel.name ? (
+          <div>
+            <h1>{nameCoctel.name}</h1>
+            <h2>Ingredients:</h2>
+            <ul>
+              {nameCoctel.ingredients ? (
+              <h1>{nameCoctel.ingredients}</h1>
+
+              ) : (
+                <li>No ingredients available</li>
+              )}
+            </ul>
+            <h2>Instructions:</h2>
+            <p>{nameCoctel.instructions}</p>
+          </div>
+        ) : (
+          <p>No data available</p>
+        )}
+  
+        <input
           className="inputCoctel"
           type="text"
           placeholder="Introduce el nombre del cóctel"
           value={this.state.nameCoctel}
           onChange={this.handleInputChange}
         />
-        <button className='boton' onClick={this.handleFetchCoctel}>Fetch Coctel Name</button>
+        <button className="boton" onClick={this.handleFetchCoctel}>
+          Fetch Coctel Name
+        </button>
         <div>
-  
-    <div key={this.props.nameCoctel.name}>
-      <h1>{this.props.nameCoctel.name}</h1>
-      <h1>Ingredients:</h1>
-      <ul>
-       
-        
-      </ul>
-    </div>
-  
-    <p>No data available.</p>
-
-</div>
-
+          <p>nameCoctel: {nameCoctel}</p>
+          <p>error: {error ? error.message : 'Ningún error'}</p>
+        </div>
       </div>
     );
   }
+  
+  
+  
+  
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    loading: state.loading,
-    nameCoctel: state.nameCoctel,
-    error: state.error, };
+    loading: state.coctel.loading,
+    nameCoctel: state.coctel.nameCoctel,
+    error: state.coctel.error,
+  };
 };
 
 const mapDispatchToProps = (dispatch) => ({
@@ -64,12 +87,4 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(fetchCoctelNameStart(nameCoctel)),
 });
 
-//si quisiera añadir un console.log para ver si se despacha la accion
-/**/
-
 export default connect(mapStateToProps, mapDispatchToProps)(Cocteleria);
-
-
-
-
-//falta por llevarme desde mapstatetoprops el nombre que recibo de la api a mi componente
