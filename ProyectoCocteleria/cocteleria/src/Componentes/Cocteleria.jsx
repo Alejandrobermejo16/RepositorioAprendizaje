@@ -33,25 +33,30 @@ class Cocteleria extends Component {
     return (
       <div>
 
-<h1>{JSON.stringify(nameCoctel.ingredients)}</h1>
-
+        <div className="cajabebidas">
+          <img className="ginebra" src="https://www.decantalo.com/es/img/cms/ginebra.jpg" alt="botella de ginebra" />
+          <img className="bourbon" src="https://media.tenor.com/trk0DqxlmVoAAAAC/bourbon-bourbon-in-a-scull-glass.gif" alt="Tbotella de bourbon" />
+          <img className="bozka" src="https://www.la-martiniquaise.com/wp-content/uploads/2019/01/poliakov_banniere_lm_1380_790-1.jpg" alt="botella de bozka" />
+        </div>
+<p>No olvides desactivar coors en el navegador para obtener resultados</p>
         {nameCoctel.name ? (
-          <div>
-            <h1>{JSON.stringify(nameCoctel.name)}</h1>
-            <h2>Ingredients:</h2>
+          <div className="contenedor-respuesta">
+            <h2>Nombre:</h2>
+            <h1>{JSON.stringify(nameCoctel.name).replace(/["\[\]]/g, ' ')}</h1>
+            <h2>Ingredientes:</h2>
             <ul>
               {nameCoctel.ingredients ? (
-            <h1>{JSON.stringify(nameCoctel.ingredients)}</h1>
+                <h1>{JSON.stringify(nameCoctel.ingredients).replace(/["\[\]]/g, ' ')}</h1>
 
               ) : (
-                <li>No ingredients available</li>
+                <li>No existen ingredientes</li>
               )}
             </ul>
-            <h2>Instructions:</h2>
-            <p>{JSON.stringify(nameCoctel.instructions)}</p>
+            <h2>Instrucciones:</h2>
+            <p>{JSON.stringify(nameCoctel.instructions).replace(/["\[\]]/g, ' ')}</p>
           </div>
         ) : (
-          <p>No data available</p>
+          <p>No hay datos disponibles</p>
         )}
 
         <input
@@ -62,8 +67,7 @@ class Cocteleria extends Component {
           onChange={this.handleInputChange}
         />
         <button className="boton" onClick={this.handleFetchCoctel}>
-          Fetch Coctel Name
-        </button>
+          Buscar        </button>
         {/* <div>
           <p>nameCoctel: {nameCoctel}</p>
           <p>error: {error ? error.message : 'Ningún error'}</p>

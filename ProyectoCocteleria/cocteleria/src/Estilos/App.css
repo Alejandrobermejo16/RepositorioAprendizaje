@@ -14,3 +14,39 @@
   width: 200px;
 }
 h1{color: white;}
+
+.cajabebidas{
+  
+    display: flex; /* Utiliza Flexbox para mostrar las imágenes en línea */
+    justify-content: space-between; /* Distribuye el espacio entre las imágenes */
+    border-top:  solid white; /* Agrega un borde negro alrededor del contenedor */
+    overflow: hidden; /* Evita que las imágenes sobresalgan del contenedor */
+    width: 100%; /* Establece el ancho del contenedor al 25% de la pantalla */
+    max-width: 100%; /* Define un ancho máximo para mantener el tamaño máximo en dispositivos grandes */
+   height: 400px;
+}
+
+.ginebra{
+  flex: 1; /* Permite que las imágenes se expandan para llenar el espacio disponible horizontalmente */
+  border: 4px solid rgb(5, 64, 131); /* Agrega un borde negro alrededor de cada imagen */
+  max-width: 100%; /* Garantiza que las imágenes no sean más anchas que el contenedor */
+  height: auto; /* Mantiene la proporción de aspecto original de las imágenes */
+}
+
+.bourbon{
+  flex: 1; /* Permite que las imágenes se expandan para llenar el espacio disponible horizontalmente */
+  border: 4px solid rgb(5, 64, 131); /* Agrega un borde negro alrededor de cada imagen */
+  max-width: 100%; /* Garantiza que las imágenes no sean más anchas que el contenedor */
+  height: auto; /* Mantiene la proporción de aspecto original de las imágenes */
+}
+
+.bozka{
+  flex: 1; /* Permite que las imágenes se expandan para llenar el espacio disponible horizontalmente */
+  border: 4px solid rgb(5, 64, 131); /* Agrega un borde negro alrededor de cada imagen */
+  max-width: 100%; /* Garantiza que las imágenes no sean más anchas que el contenedor */
+  height: auto; /* Mantiene la proporción de aspecto original de las imágenes */}
+
+.contenedor-respuesta{
+  width: ;
+  height: ;
+}
