@@ -1,0 +1,90 @@
+<script>
+
+    {/*Su tarea es crear una función que pueda tomar cualquier número entero no negativo como argumento y devolverlo 
+con sus dígitos en orden descendente. Básicamente, reorganice los dígitos para crear el número más alto posible.*/}
+
+
+    {
+        function descendingOrder(n) {
+            // Conviertes n a String para poder manipularlo 
+            const numeroPasadoString = n.toString();
+            // Separamos el para manipular número a número
+            const arrayConEspaciosEntreLosNumeros = numeroPasadoString.split('');
+            // Ordenamos el array en orden descendente interpretando los elementos como números
+            const ordenados = arrayConEspaciosEntreLosNumeros.sort((a, b) => parseInt(b, 10) - parseInt(a, 10));
+            // Convertimos el número otra vez a entero para poderlo mostrar en consola y le quitamos el espacio en blanco que tenía actualmente
+            const numeroPasadoNum = parseInt(ordenados.join(''), 10);
+
+            return numeroPasadoNum;
+        }
+
+        console.log(descendingOrder(463182)); // Output: 864321
+
+        //forma corta
+        const descendingOrder = (n) => parseInt(n.toString().split('').sort((a, b) => b - a).join(''), 10);
+
+        console.log(descendingOrder(463182)); // Output: 864321
+
+
+    }
+
+    //-----------------------------------------------------------------------------------------------------------------------
+    // elevar al cuadrado cada dígito de un número y concatenarlos.
+
+    // Por ejemplo, si ejecutamos 9119 a través de la función, saldrá 811181, porque 92 es 81 y 12 es 1. (81-1-1-81)
+
+    // Ejemplo #2: Una entrada de 765 devolverá/debería devolver 493625 porque 72 es 49, 62 es 36 y 52 es 25. (49-36-25)
+
+    // Nota: La función acepta un número entero y devuelve un número entero.
+
+
+    function squareDigits(num) {
+
+        const numero = num.toString(); //pasado a String
+        const cadena = numero.split(''); //pasado a una matriz y dejando un espacio en blanco entre cada numero
+        // Elevar al cuadrado cada dígito y convertirlo nuevamente a un número
+        const potencia = cadena.map((elemento) => Math.pow(parseInt(elemento), 2));
+
+        // Convertir el array de números nuevamente en una cadena y luego a un número
+        const ConversionANumero = parseInt(potencia.join(''));
+
+        return ConversionANumero;
+
+        return ConversionANumero;
+    }
+
+    console.log(squareDigits(12348));
+
+    //--------------------------------------------------------------------------------------------------------------------------
+
+    /*An isogram is a word that has no repeating letters, consecutive or non-consecutive. 
+    Implement a function that determines whether a string that contains only letters is
+     an isogram. Assume the empty string is an isogram. Ignore letter case*/
+
+
+    function isIsogram(str) {
+
+        str = str.toLowerCase(); //convierto el string en minuscula para que ignore siempre las mayúsculas
+        const letrasVistas = {}; //se guardan las letras vistas del array
+
+        for (let i = 0; i < str.length; i++) {   //se recorre el array en busca de ver si hay letras repetidas
+
+            const letra = str[i];  //se guarda en la constante letra cada letra
+
+            if (letrasVistas[letra]) {  //como en un objeto se puede guardar una matriz, la guardamos
+                //comparamos y si es igual da false , por lo que sale del bucle
+
+                return false;
+
+            }
+            letrasVistas[letra] = true;
+        }
+        //si sale del for es porque es un isograma
+        return true;
+    }
+
+    console.log(isIsogram("aba"));
+    console.log(isIsogram("hello"));
+    console.log(isIsogram(""));
+
+</script>

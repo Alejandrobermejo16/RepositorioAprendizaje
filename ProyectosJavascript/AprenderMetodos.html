@@ -193,6 +193,54 @@ La función mapno modifica el arreglo original, sino que crea un nuevo arreglo c
 Recuerda que mapes una herramienta poderosa para transformar datos de un array de forma declarativa y es una función muy útil en la programación funcional y en el trabajo con arrays en JavaScript.
 */}
 
+// El método split()se utiliza para dividir una cadena de texto en una matriz de subcadenas basada en un separador especificado. A continuación, se describen los parámetros que esperan:
+
+// Separador (separator): Este es el parámetro principal y obligatorio. Es el carácter o expresión regular que se utiliza como criterio para dividir la cadena original. Puede ser una cadena simple o una expresión regular. Si se omite este parámetro o se pasa como undefined, la cadena completa se convertirá en el único elemento del array resultante.
+
+// Límite (límite): Este parámetro es opcional. Defina el número máximo de divisiones que se realizarán. Si se proporciona, el array resultante tendrá, como máximo, limit + 1elementos. Si no se proporciona, o se pasa como undefined, no hay límite en la cantidad de divisiones y se dividirá la cadena en todas las coincidencias del separador.
+
+// Veamos algunos ejemplos de uso del método split():
+
+
+
+const texto = "Hola, cómo estás, amigo";
+const palabras = texto.split(', '); // Divide la cadena en un array de palabras usando la coma y el espacio como separador
+console.log(palabras); // Output: ['Hola', 'cómo estás', 'amigo']
+
+const numeros = "1-2-3-4-5";
+const partes = numeros.split('-'); // Divide la cadena en un array de números usando el guión como separador
+console.log(partes); // Output: ['1', '2', '3', '4', '5']
+
+const textoLargo = "Este es un texto largo";
+const fragmentos = textoLargo.split(' ', 3); // Divide la cadena en un array de 3 fragmentos usando el espacio como separador
+console.log(fragmentos); // Output: ['Este', 'es', 'un']
+
+
+
+
+// El método sort()se utiliza para ordenar los elementos de un array en su lugar y devuelve el array ordenado. Por defecto, sort()realiza una ordenación basada en la representación de cadena de los elementos del array. Esto significa que los elementos se ordenarán alfabéticamente (si son cadenas) o como cadenas numéricas (si son números).
+
+// El método sort()no toma parámetros obligatorios, pero puede proporcionar una función de comparación como argumento opcional para controlar cómo se realiza la ordenación. La función de comparación toma dos elementos del array como argumentos y devuelve un valor negativo si el primer elemento debe colocarse antes del segundo, un valor positivo si debe colocarse después y 0 si ambos elementos son iguales.
+//Cuando el método sort()compara dos elementos, espera que la función de comparación devuelva un valor negativo si el primer elemento debe ordenarse antes que el segundo, un valor positivo si debe ordenarse después y 0 si ambos elementos son iguales y su orden no importa en términos de clasificación.
+
+const frutas = ["manzana", "banana", "uva", "cereza"];
+frutas.sort();
+
+console.log(frutas); // Output: ["banana", "cereza", "manzana", "uva"]
+// En este ejemplo, las frutas se ordenan alfabéticamente de forma predeterminada.
+
+// Ahora, si deseas ordenar números en lugar de cadenas, puedes usar una función de comparación:
+
+const numerosaOrdenar = [5, 2, 9, 1, 5];
+numerosaOrdenar.sort(function(a, b) {
+  return a - b;
+});
+
+console.log(numerosaOrdenar); // Output: [1, 2, 5, 5, 9]
+// En este ejemplo, la función de comparación function(a, b) { return a - b; }compara dos números y devuelve un valor negativo si adebe ir antes que b, lo que resulta en una ordenación ascendente de números.
+
+// Entonces, en resumen, el método sort()puede usarse sin argumentos para realizar una ordenación basada en cadenas o con una función de comparación personalizada para ordenar los elementos de acuerdo a tus necesidades específicas. La función de comparación debe devolver valores negativos, positivos o cero según la relación de orden entre los elementos.
+
 
 
 
